@@ -17,11 +17,11 @@ export default {
 
 <template>
   <div>
-    <h1>Here is the EventHandler component!</h1>
+    <h1>EventHandler component:</h1>
     <EventHandler />
 
     <br><br><br>
-    <hr>
+    <hr> 
     <h1>Basic Practices:</h1>
     <BasicPractices />
   </div>
