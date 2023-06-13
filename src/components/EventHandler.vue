@@ -8,7 +8,13 @@ export default {
     }
   },
   methods: {
-
+    increment(num, event) {
+      this.count += num;
+      console.log('Event', event);
+    },
+    decrement(num) {
+      this.count -= num;
+    }
   }
 }
 </script>
@@ -21,5 +27,8 @@ export default {
     <h2>{{ count }}</h2>
     <button v-on:click="count++">Increment count by 1</button>
     <button v-on:click="count--">Decrement count by 1</button>
+    <hr>
+    <button v-on:click="increment(5, $event)">Increment Function calling</button>
+    <button v-on:click="decrement(2)">Decrement Function calling</button>
   </div>
 </template>

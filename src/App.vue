@@ -1,9 +1,11 @@
 <script>
 import EventHandler from './components/EventHandler.vue';
+import FormHandler from './components/FormHandler.vue';
 import BasicPractices from './components/BasicPractices.vue'
 
 export default {
   components: {
+    FormHandler,
     EventHandler,
     BasicPractices
   },
@@ -17,6 +19,12 @@ export default {
 
 <template>
   <div>
+    <h1>FormHandler component:</h1>
+    <FormHandler />
+
+    <br>
+    <hr> 
+
     <h1>EventHandler component:</h1>
     <EventHandler />
 
