@@ -1,4 +1,6 @@
 <script>
+import ComponentE from './components/ComponentE.vue';
+import Popup from './components/Popup.vue';
 import ComponentPropsPractices from './components/ComponentPropsPractices.vue';
 import Article from './components/Article.vue';
 import EventHandler from './components/EventHandler.vue';
@@ -8,6 +10,8 @@ import BasicPractices from './components/BasicPractices.vue'
 
 export default {
   components: {
+    ComponentE,
+    Popup,
     Article,
     ComponentPropsPractices,
     Watchers,
@@ -20,14 +24,34 @@ export default {
     return {
       // Props passing example
       name: 'Prince',
-      company: 'TimTim'
+      company: 'TimTim',
+      // component events
+      showPopup: false,
     }
   },
+  provide() {
+    return {
+      username: this.name
+    }
+  },
+  methods: {
+    closePopup(name) {
+      this.showPopup = false;
+      alert(name);
+    }
+  }
 }
 </script>
 
 <template>
   <div>
+    <button @click="showPopup = true">Show Popup</button>
+    <!-- <Popup v-show="showPopup" @close="showPopup = false" /> -->
+    <Popup v-show="showPopup" @close="closePopup" />
+
+    <pre>Username: {{ name }}</pre>
+    <ComponentE />
+
     <h1>Component Props Practices:</h1>
     
     <ComponentPropsPractices name="Foysal" company="BJIT" />
