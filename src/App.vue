@@ -1,4 +1,6 @@
 <script>
+import ComponentPropsPractices from './components/ComponentPropsPractices.vue';
+import Article from './components/Article.vue';
 import EventHandler from './components/EventHandler.vue';
 import FormHandler from './components/FormHandler.vue';
 import Watchers from './components/Watchers.vue';
@@ -6,6 +8,8 @@ import BasicPractices from './components/BasicPractices.vue'
 
 export default {
   components: {
+    Article,
+    ComponentPropsPractices,
     Watchers,
     FormHandler,
     EventHandler,
@@ -14,6 +18,9 @@ export default {
   name: "App",
   data() {
     return {
+      // Props passing example
+      name: 'Prince',
+      company: 'TimTim'
     }
   },
 }
@@ -21,6 +28,16 @@ export default {
 
 <template>
   <div>
+    <h1>Component Props Practices:</h1>
+    
+    <ComponentPropsPractices name="Foysal" company="BJIT" />
+    <!-- props assigned dynamically with v-bind or its : -->
+    <ComponentPropsPractices :name="name" :company="company" /> 
+    <Article id="article-id" title="Vikings" :likes="52" />
+
+    <br>
+    <hr> 
+    
     <h1>Watchers component:</h1>
     <Watchers />
 
