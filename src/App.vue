@@ -1,4 +1,7 @@
 <script>
+import NameList from './components/NameList.vue';
+import Card from './components/Card.vue';
+import Input from './components/Input.vue';
 import ComponentE from './components/ComponentE.vue';
 import Popup from './components/Popup.vue';
 import ComponentPropsPractices from './components/ComponentPropsPractices.vue';
@@ -10,6 +13,9 @@ import BasicPractices from './components/BasicPractices.vue'
 
 export default {
   components: {
+    NameList,
+    Card,
+    Input,
     ComponentE,
     Popup,
     Article,
@@ -45,6 +51,33 @@ export default {
 
 <template>
   <div>
+    <h1>Slots:</h1>
+    <NameList>
+      <template v-slot:default="slotProps">
+        {{ slotProps.firstName }} {{ slotProps.lastName }}
+      </template>
+    </NameList>
+
+     <!-- Slots -->
+    <Card></Card>
+    <Card>Card Content</Card>
+    <Card><img src="https://picsum.photos/200" /></Card>
+    <Card>
+      <template v-slot:header>
+        <h3>Header</h3>
+      </template>
+      <template v-slot:default>
+        <img src="https://picsum.photos/200" />
+      </template>
+      <template v-slot:footer>
+        <button>View Details</button>
+      </template>
+    </Card>
+
+    <br>
+    <hr> 
+    <Input v-model="name" />
+
     <button @click="showPopup = true">Show Popup</button>
     <!-- <Popup v-show="showPopup" @close="showPopup = false" /> -->
     <Popup v-show="showPopup" @close="closePopup" />
