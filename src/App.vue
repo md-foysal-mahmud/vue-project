@@ -17,7 +17,7 @@ export default {
     Watchers,
     FormHandler,
     EventHandler,
-    BasicPractices
+    BasicPractices 
   },
   name: "App",
   data() {
