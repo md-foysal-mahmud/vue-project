@@ -1,4 +1,6 @@
 <script>
+import CreatePost from './components/CreatePost.vue';
+import PostList from './components/PostList.vue';
 import NameList from './components/NameList.vue';
 import Card from './components/Card.vue';
 import Input from './components/Input.vue';
@@ -13,6 +15,8 @@ import BasicPractices from './components/BasicPractices.vue'
 
 export default {
   components: {
+    CreatePost,
+    PostList,
     NameList,
     Card,
     Input,
@@ -51,6 +55,16 @@ export default {
 
 <template>
   <div>
+    <h1>Create Post:</h1>
+    <CreatePost />
+    <br>
+    <hr> 
+
+    <h1>PostList component(Date Fetching):</h1>
+    <PostList />
+    <br>
+    <hr> 
+
     <h1>Slots:</h1>
     <NameList>
       <template v-slot:default="slotProps">
